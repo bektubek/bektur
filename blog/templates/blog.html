@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% for post in object_list %}
+     <style>h3{color = "red"}</style>
+<h3 style="color:red"><a href="\blog\{{ post.id }}">{{ post.title }}</a> </h3>
+<div class = "post_meta">
+     on {{ post.date}}
+	 </div>
+	 
+<div class = "post_body">
+     {{ post.body|safe|linebreaks }}
+</div>	 
+{% endfor %}
+{% endblock %}
